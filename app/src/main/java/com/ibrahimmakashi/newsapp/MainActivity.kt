@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var newsList: RecyclerView
      var article =  mutableListOf<Article>()
     lateinit var progressBar: ProgressBar
-    var pageNum = 1
+    var pageNum = 0
     var totalResult = -1
     var TAG = "MainActivity"
    private lateinit var refresh : SwipeRefreshLayout
@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
         newsList.adapter = adapter
         var layoutManager = LinearLayoutManager(this)
         newsList.layoutManager = layoutManager
-        val snapHelper: SnapHelper = LinearSnapHelper()
-        snapHelper.attachToRecyclerView(newsList)
+//        val snapHelper: SnapHelper = LinearSnapHelper()
+//        snapHelper.attachToRecyclerView(newsList)
         refresh.setOnRefreshListener{
             refresh.isRefreshing = false
             pageNum++
